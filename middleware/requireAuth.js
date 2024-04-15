@@ -16,7 +16,6 @@ const requireAuth = async (req, res, next) => {
     try {
        const decodedToken = jwt.verify(token, process.env.JWT_SECRET);
        console.log(decodedToken);
-        // const {_id} = jwt.verify(token, process.env.JWT_SECRET);
 
         const {_id} = decodedToken;
         console.log('Decoded JWT token:', _id);
